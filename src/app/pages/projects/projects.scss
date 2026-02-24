@@ -15,11 +15,11 @@
 		border-radius: 8px;
 		overflow: hidden;
 		border: 1px solid rgba(255,255,255,0.03);
-	max-width: 900px;
+	max-width: 500px;
 		margin: 0 auto;
 
 		.card-media {
-			width: 60%;
+			width: 100%;
 			/* keep a consistent aspect ratio so images never stretch */
 			aspect-ratio: 16 / 9;
 			overflow: hidden;
@@ -72,11 +72,43 @@
 	}
 
 	.project-card .card-body {
-		width: 40%;
+		width: 60%;
 		padding: 1.25rem 1.5rem;
 	}
 }
 
+.tools {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+
+.tool {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #1e1e1e;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.tool i {
+  font-size: 18px;
+}
+
 /* GitHub icon inside repo link */
 .repo { display: inline-flex; align-items: center; gap: 0.5rem; }
-.gh-icon { width: 16px; height: 16px; display: inline-block; }
+.gh-icon { width: 16px; height: 16px; display: inline-block; color: currentColor; }
+
+/* tool badges */
+.tools { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.tool { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.25rem 0.45rem; border-radius: 8px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.03); }
+.tool .icon { display: none; }
+.tool-icon { width: 20px; height: 20px; color: #6ee7b7; }
+.tool .label { color: #cfe7ff; font-size: 0.85rem; }
+
+@media (max-width: 640px) {
+	.tool .label { display: none; }
+}
