@@ -1,0 +1,22 @@
+:host {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background: linear-gradient(180deg, #03040a 0%, #0b1220 100%);
+	color: #cfe7ff;
+}
+
+.app-main {
+	padding: 2rem 1rem;
+	flex: 1 0 auto;
+}
+
+.container {
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+/* Ensure router-outlet content flows nicely */
+router-outlet {
+	display: block;
+}
