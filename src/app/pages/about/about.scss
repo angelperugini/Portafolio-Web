@@ -1,9 +1,133 @@
-.about-page {
-	padding: 1.25rem 0;
+.about-section {
+  padding: 6rem 0;
 
-	h1 { color: #eaf8ff; margin-bottom: 0.5rem; }
-	p { color: #9fb0c8; }
+  .about-header {
+    margin-bottom: 3.5rem;
+    
+    h2 {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      color: #ffffff;
+      margin-bottom: 0.8rem;
+    }
+    
+    .divider {
+      width: 60px;
+      height: 4px;
+      background: #6ee7b7;
+      border-radius: 2px;
+    }
+  }
 
-	.skills { margin-top: 1rem; color: #cfe7ff; }
-	.skills li { margin-bottom: 0.4rem; }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    margin-bottom: 5rem;
+
+    @media (min-width: 900px) {
+      grid-template-columns: 1fr 1.2fr; // La columna de habilidades es un poco más ancha
+    }
+  }
+
+  .about-text {
+    p {
+      color: #8a9fc0;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      
+      strong {
+        color: #cfe7ff;
+        font-weight: 600;
+      }
+    }
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Habilidades (Badges) */
+  .skills-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+
+    .skill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.7rem 1.2rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      color: #cfe7ff;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba(110, 231, 183, 0.08);
+        border-color: #6ee7b7;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(110, 231, 183, 0.1);
+      }
+      
+      i {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  /* Certificaciones */
+  .certifications-section {
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .cert-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      padding: 1.5rem;
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.6), rgba(11, 18, 32, 0.8));
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 14px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        border-color: rgba(59, 130, 246, 0.4);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      }
+
+      .cert-icon {
+        font-size: 1.8rem;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 0.8rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .cert-info {
+        h4 {
+          color: #ffffff;
+          font-size: 1.05rem;
+          margin: 0 0 0.5rem 0;
+          line-height: 1.4;
+          font-weight: 600;
+        }
+        span {
+          color: #6ee7b7;
+          font-size: 0.85rem;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+  }
 }

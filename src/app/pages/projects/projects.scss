@@ -11,31 +11,45 @@
 	.project-card {
 		display: flex;
 		flex-direction: column;
-		background: rgba(255,255,255,0.02);
-		border-radius: 8px;
+		background: linear-gradient(145deg, #0f172a, #0b1220);
+		border-radius: 14px;
 		overflow: hidden;
-		border: 1px solid rgba(255,255,255,0.03);
-	max-width: 500px;
-		margin: 0 auto;
+		border: 1px solid rgba(255,255,255,0.05);
+		transition: all 0.3s ease;
+		margin-bottom: 2rem;
+
+		.project-card:hover {
+			transform: translateY(-8px);
+			box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+			}
 
 		.card-media {
 			width: 100%;
-			/* keep a consistent aspect ratio so images never stretch */
-			aspect-ratio: 16 / 9;
+			max-height: 220px;   // 🔥 limita la altura
 			overflow: hidden;
+			border-bottom: 1px solid rgba(255,255,255,0.05);
+			position: relative; // para el overlay
+		
+		.card-media::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+			}
 
-			img {
+		img {
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
-				object-position: center;
+				object-position: top; // 👈 se ve más elegante que center
 				display: block;
-				transition: transform 220ms ease;
+				transition: transform 0.4s ease;
 			}
 
-			/* optional subtle zoom on hover for larger screens */
-			&:hover img { transform: scale(1.03); }
-		}
+		&:hover img {
+				transform: scale(1.05);
+			}
+			}
 
 		.card-body {
 			padding: 1.25rem;
@@ -43,6 +57,16 @@
 			flex-direction: column;
 			gap: 0.6rem;
 		}
+
+		.card-body h3 {
+			font-size: 1.25rem;
+			font-weight: 600;
+			color: #ffffff;
+			}
+		.card-body p {
+			color: #9fb0c8;
+			line-height: 1.5;
+			}
 
 		.card-links {
 			margin-top: auto;
@@ -60,54 +84,55 @@
 .ghost { background: transparent; border: 1px solid rgba(255,255,255,0.06); color: #cfe7ff; }
 
 @media (min-width: 900px) {
-	.project-card {
-		flex-direction: row;
-		align-items: stretch;
-	}
+  .project-card {
+    flex-direction: row;
+  }
 
-	.project-card .card-media {
-		width: 40%;
-		aspect-ratio: 16 / 9;
-		height: auto;
-	}
+  .project-card .card-media {
+    width: 35%;
+    max-height: none;
+  }
 
-	.project-card .card-body {
-		width: 60%;
-		padding: 1.25rem 1.5rem;
-	}
+  .project-card .card-body {
+    width: 65%;
+  }
 }
 
 .tools {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
-  margin: 15px 0;
+  margin: 12px 0;
 }
 
 .tool {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #1e1e1e;
-  padding: 6px 10px;
-  border-radius: 8px;
-  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 999px; // píldora moderna
+  font-size: 0.8rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.2s ease;
 }
 
-.tool i {
-  font-size: 18px;
+.tool:hover {
+  transform: translateY(-3px);
+  border-color: #6ee7b7;
+  box-shadow: 0 4px 15px rgba(110,231,183,0.15);
+}
+
+.tool-icon {
+  width: 18px;
+  height: 18px;
+  color: #6ee7b7;
 }
 
 /* GitHub icon inside repo link */
 .repo { display: inline-flex; align-items: center; gap: 0.5rem; }
 .gh-icon { width: 16px; height: 16px; display: inline-block; color: currentColor; }
 
-/* tool badges */
-.tools { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-.tool { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.25rem 0.45rem; border-radius: 8px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.03); }
-.tool .icon { display: none; }
-.tool-icon { width: 20px; height: 20px; color: #6ee7b7; }
-.tool .label { color: #cfe7ff; font-size: 0.85rem; }
 
 @media (max-width: 640px) {
 	.tool .label { display: none; }

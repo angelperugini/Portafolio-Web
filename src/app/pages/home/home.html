@@ -1,12 +1,32 @@
-<section class="home-hero">
-	<div class="hero-inner container">
-		<h1>Ángel Perugini</h1>
-		<p class="lead">Desarrollador web — frontend &amp; aplicaciones modernas.</p>
+<section class="hero-section container">
+  <div class="hero-content">
+    <span class="badge">Disponible para trabajar</span>
+    
+    <h1 class="hero-title">
+      Hola, soy <span class="highlight">Angel Perugini</span>
+    </h1>
+    
+    <h2 class="hero-subtitle">
+      Desarrollador de Software & Ingeniero en Formación
+    </h2>
+    
+    <p class="hero-description">
+      Estudiante de Ingeniería en Informática con sólida base en desarrollo backend y frontend. Especializado en Java, Python, TypeScript y bases de datos, con certificaciones internacionales en Scrum y Azure. Me apasiona resolver problemas técnicos y construir soluciones eficientes.
+    </p>
 
-		<div class="hero-cta">
-			<a class="btn primary" routerLink="proyectos">Ver proyectos</a>
-			<a class="btn ghost" routerLink="sobre-mi">Sobre mí</a>
-		</div>
-	</div>
+    <div class="hero-actions">
+      <a href="#proyectos" class="btn primary">Ver mis proyectos</a>
+      <a href="cv-angel-perugini.pdf" download="CV_Angel_Perugini.pdf" target="_blank" class="btn ghost">
+			<lucide-icon [img]="FileText" class="btn-icon"></lucide-icon> Descargar CV</a>
+    </div>
+
+    <div class="hero-social">
+      <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="social-link" aria-label="LinkedIn">
+        <i class="devicon-linkedin-plain"></i>
+      </a>
+      <a href="https://github.com/tu-usuario" target="_blank" class="social-link" aria-label="GitHub">
+        <i class="devicon-github-original"></i>
+      </a>
+    </div>
+  </div>
 </section>
-

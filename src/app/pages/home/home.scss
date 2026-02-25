@@ -1,27 +1,112 @@
-.home-hero {
-	padding: 3rem 0;
+.hero-section {
+  // 🔥 1. Usa mucho espacio: Ocupa el 90% del alto de la pantalla
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 0;
+  
+  // 🔥 2. Colores que se mezclan: Un brillo sutil detrás del texto que se desvanece hacia tu fondo oscuro
+  background: radial-gradient(circle at 0% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
+              radial-gradient(circle at 100% 100%, rgba(110, 231, 183, 0.05) 0%, transparent 50%);
+  position: relative;
 
-	.hero-inner {
-		text-align: left;
+  .hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 1; // Asegura que el texto esté por encima del brillo
+  }
 
-		h1 {
-			font-size: 2.25rem;
-			margin: 0 0 0.25rem 0;
-			color: #eaf8ff;
-		}
+  .badge {
+    display: inline-flex;
+    padding: 0.5rem 1rem;
+    background: rgba(110, 231, 183, 0.08); // Más sutil para que se funda mejor
+    color: #6ee7b7;
+    border: 1px solid rgba(110, 231, 183, 0.15);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    letter-spacing: 0.5px;
+  }
 
-		.lead {
-			color: #9fb0c8;
-			margin-bottom: 1rem;
-		}
+  .hero-title {
+    font-size: clamp(3rem, 6vw, 4.5rem); // Letra más grande para aprovechar el espacio
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
 
-		.hero-cta {
-			display: flex;
-			gap: 0.75rem;
+    .highlight {
+      background: linear-gradient(135deg, #6ee7b7 0%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
 
-			.btn { padding: 0.6rem 0.9rem; border-radius: 8px; text-decoration: none; }
-			.primary { background: #6ee7b7; color: #042018; }
-			.ghost { background: transparent; border: 1px solid rgba(255,255,255,0.04); color: #cfe7ff; }
-		}
-	}
+  .hero-subtitle {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    color: #9fb0c8;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+  .hero-description {
+    font-size: 1.15rem;
+    color: #8a9fc0;
+    line-height: 1.7;
+    margin-bottom: 3rem; // Más separación antes de los botones
+    max-width: 650px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin-bottom: 3.5rem;
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.8rem; // Botones un poco más grandes
+      font-size: 1.05rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      
+      &.primary {
+        background: #6ee7b7;
+        color: #042018;
+        box-shadow: 0 4px 15px rgba(110, 231, 183, 0.2); // Sombra que combina
+        
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 25px rgba(110, 231, 183, 0.3);
+        }
+      }
+      
+      &.ghost:hover {
+        background: rgba(12, 214, 181, 0.582);
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  .hero-social {
+    display: flex;
+    gap: 1.5rem;
+    
+    .social-link {
+      color: #8a9fc0;
+      font-size: 1.8rem;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        color: #ffffff; // Que brille en blanco al pasar el mouse
+        transform: translateY(-3px) scale(1.1);
+      }
+    }
+  }
 }
